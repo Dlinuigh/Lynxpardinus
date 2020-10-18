@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.lynxpardinus">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.LynxPardinus">
+        <activity android:name=".lp.ProgramActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".lp.ChoiceActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".lp.StatementActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".search.NewentryActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".search.SearchActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".about.AboutActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".settings.SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".lp.LpActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".account.LogoutActivity" />
+        <activity android:name=".account.LoginActivity" />
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

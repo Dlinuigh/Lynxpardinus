@@ -1,0 +1,19 @@
+<resources>
+    <string-array name="updateChoices">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+    <string-array name="updateChoice">
+        <item>不自动更新</item>
+        <item>Wifi环境下自动更新</item>
+        <item>任何网络自动更新</item>
+    </string-array>
+    <string-array name="kinds">
+        <item>class</item>
+        <item>module</item>
+        <item>function</item>
+        <item>note</item>
+        <item>method</item>
+    </string-array>
+</resources>

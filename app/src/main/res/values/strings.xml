@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">LynxPardinus</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="about_title">这是关于的测试标题</string>
+    <string name="about_mainpage">这个链接可以直达我们的主页</string>
+    <string name="copyright">软件部分内容为原创，保留权益</string>
+    <string name="search">检索</string>
+    <string name="learn">学习</string>
+    <string name="practice">练习</string>
+    <string name="settings">设置</string>
+    <string name="about">关于</string>
+    <string name="noticeBox">通知</string>
+    <string name="feedBack">反馈</string>
+</resources>

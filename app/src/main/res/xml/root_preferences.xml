@@ -1,0 +1,29 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory app:title="外观">
+        <SeekBarPreference app:title="字体大小"
+            app:min="12"
+            android:max="24"
+            android:key="fontSize"/>
+        <SwitchPreference app:title="自动切换夜间模式"
+            android:key="darkMode"
+            android:defaultValue="false"/>
+        <SeekBarPreference app:title="卡片圆角"
+            android:key="r-value"/>
+    </PreferenceCategory>
+    <PreferenceCategory app:title="更新">
+        <DropDownPreference app:title="更新选项"
+            android:entryValues="@array/updateChoices"
+            android:entries="@array/updateChoice"
+            android:key="updateChoice"
+            app:useSimpleSummaryProvider="true"/>
+    </PreferenceCategory>
+    <PreferenceCategory app:title="反馈系统信息">
+        <EditTextPreference app:title="默认联系方式"
+            android:key="contact"/>
+        <EditTextPreference app:title="默认昵称"
+            android:key="nickname"/>
+    </PreferenceCategory>
+
+</PreferenceScreen>

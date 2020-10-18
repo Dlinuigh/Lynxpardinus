@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/nav_learn"
+    android:id="@+id/mobile_navigation.xml">
+    <activity
+        android:id="@+id/nav_search"
+        android:name="com.lynxpardinus.search.SearchActivity"
+        android:label="搜索"
+        tools:layout="@layout/activity_search"/>
+    <activity
+        android:id="@+id/nav_learn"
+        android:name="com.lynxpardinus.lp.LpActivity"
+        android:label="学习"
+        tools:layout="@layout/activity_lp"/>
+    <activity
+        android:id="@+id/nav_practice"
+        android:name="com.lynxpardinus.lp.LpActivity"
+        android:label="练习"
+        tools:layout="@layout/activity_lp"/>
+    <activity
+        android:id="@+id/nav_settings"
+        android:name="com.lynxpardinus.settings.SettingsActivity"
+        android:label="设置"
+        tools:layout="@layout/settings_activity"/>
+    <activity
+        android:id="@+id/nav_about"
+        android:name="com.lynxpardinus.about.AboutActivity"
+        android:label="关于"
+        tools:layout="@layout/activity_about"/>
+</navigation>

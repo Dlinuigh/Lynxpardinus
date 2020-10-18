@@ -1,0 +1,124 @@
+[
+  {
+    "id":"1" ,
+    "argument_name":[
+      "message"
+    ],
+    "argument_value":[
+      "Hello Python World!"
+
+    ],
+    "answer":"Hello Python World!"
+  },
+  {
+    "id":"2" ,
+    "argument_name":[
+      "wd1",
+      "wd2",
+      "wd3",
+      "wd4",
+      "wd5",
+    ],
+    "argument_value":[
+      "妈妈。",
+      "都没有",
+      "开挂的人",
+      "无论玩什么竞技游戏，",
+      "众所周知，"
+    ],
+    "answer":"众所周知，无论玩什么竞技游戏，开挂的人都没有妈妈。"
+  },
+  {
+    "id":"3" ,
+    "argument_name":[
+      "junkword"
+    ],
+    "argument_value":[
+      "米国的空气是多么香甜 "
+    ],
+    "answer":"米国的空气是多么香甜"
+  },
+  {
+    "id":"4" ,
+    "argument_name":[
+      "age"
+    ],
+    "argument_value":[
+      "8"
+    ],
+    "answer":"Happy 8rd birthday!"
+  },
+  {
+    "id": "21",
+    "argument_name": [
+      "letter"
+    ],
+    "argument_value": [
+      "['a', 'b', 'c', 'd', 'e']"
+    ],
+    "answer": "['a', 'b', 'c', 'd', 'e']\n['a', 'b', 'd', 'e']\n['a', 'b', 'f', 'e']\n['g', 'a', 'b', 'f', 'e']"
+  },
+  {
+    "id": "22",
+    "argument_name": [
+      "letter"
+    ],
+    "argument_value": [
+      "['c','e','a','b','d']"
+    ],
+    "answer": "['c', 'e', 'a', 'b', 'd']\n['a', 'b', 'c', 'd', 'e']\n['e', 'd', 'c', 'b', 'a']"
+  },
+  {
+    "id": "41",
+    "argument_name": [
+      "age"
+    ],
+    "argument_value": [
+      "17"
+    ],
+    "answer": "age17 is child."
+  },
+  {
+    "id": "42",
+    "argument_name": [
+      "number_1",
+      "number_2"
+    ],
+    "argument_value": [
+      "['1','2','3','4','5','6','7','8','9']"
+    ],
+    "answer": "[1,3,5,7,9]\n[2,4,5,6,8]"
+  },
+  {
+    "id":"61" ,
+    "argument_name":[
+      "lists"
+    ],
+    "argument_value":[
+      "['帝国主义','恐怖主义','分裂主义','享乐主义']"
+    ],
+    "answer":"帝国主义\n恐怖主义\n分裂主义\n享乐主义"
+  },
+  {
+    "id":"62" ,
+    "argument_name":[
+      "listas",
+      "listbs"
+    ],
+    "argument_value":[
+      "range(1,4)",
+      "range(1,5)"
+    ],
+    "answer":"1\n2\n3\n4"
+  },
+  {
+    "id":"63" ,
+    "argument_name":[
+      "lists"
+    ],
+    "argument_value":[
+      "['charles','martina','michael','danniel','phillips','van']"
+    ],
+    "answer":"['charles', 'martina', 'michael']"
+  }
+]

@@ -1,0 +1,297 @@
+[
+  {
+    "id":"1" ,
+    "title": "Hello world!",
+    "content": "尝试用已经给出的变量打出一段简单的代码，输出为：“Hello Python World!”"
+  },
+  {
+    "id":"2" ,
+    "title": "断句重排",
+    "content": "断句重排：现在有一个句子顺序被打乱，要求你重新整理语序并输出正确的语句"
+  },
+  {
+    "id":"3" ,
+    "title": "删除空格",
+    "content": "我们在浏览视频的时候，评论区经常出现一些无脑评论。这些评论都是有价格的，水军发表评论时，经常会删除后面括号里的价格。假如你是个水军，你要删除每句话后面的空格，请编译相关的代码。"
+  },
+  {
+    "id":"4" ,
+    "title": "Happy birthday",
+    "content": "你的朋友小明要过8岁生日，请你编写一段代码，利用给出的变量和函数“str()”，输出“Happy 8rd birthday!”"
+  },
+  {
+    "id": 111,
+    "title": "python中违法的操作",
+    "content": "下列哪个在python中是违法的："
+  },
+  {
+    "id": 12,
+    "title": "python内存管理",
+    "content": "关于python内存管理，下列说法错误的是："
+  },
+  {
+    "id": 13,
+    "title": "Python合法的标识",
+    "content": "下面哪个不是Python合法的标识符"
+  },
+  {
+    "id": 14,
+    "title": "大乱炖",
+    "content": "下列哪种说法是错误的"
+  },
+  {
+    "id": 15,
+    "title": "Python不支持的数据类型s",
+    "content": "Python不支持的数据类型有"
+  },
+  {
+    "id": "16",
+    "title": "Python中的复数",
+    "content": "关于Python中的复数，下列说法错误的是"
+  },
+  {
+    "id": "17",
+    "title": "字符串",
+    "content": "关于字符串下列说法错误的是"
+  },
+  {
+    "id": "18",
+    "title": "创建一个字典",
+    "content": "以下不能创建一个字典的语句是"
+  },
+  {
+    "id": "19",
+    "title": "Python语句",
+    "content": "下列Python语句正确的是"
+  },
+  {
+    "id": "110",
+    "title": "计算机内部信息形式",
+    "content": "计算机中信息处理和信息储存用"
+  },
+  {
+    "id": "111",
+    "title": "python源程序s",
+    "content": "python源程序执行的方式"
+  },
+  {
+    "id": "112",
+    "title": "Python语言语句块的标记",
+    "content": "Python语言语句块的标记是"
+  },
+  {
+    "id": "21",
+    "title": "列表的操作",
+    "content": "将a、b、c、d、e储存在一个列表中，命名为letter，并打印。1.删除列表中的c，并打印。2.将第三个元素改为f，并打印。3.添加g在列表的开头，并打印。"
+  },
+  {
+    "id": "22",
+    "title": "倒序和逆序",
+    "content": "现有一列表['c','e','a','b','d']，请将列表打印，并分别正序和倒序排列列表"
+  },
+  {
+    "id": "31",
+    "title": "字符串",
+    "content": "以下是正确的字符串"
+  },
+  {
+    "id": "32",
+    "title": "计算",
+    "content": "“ab”+”c”*2 结果是"
+  },
+  {
+    "id": "33",
+    "title": "大乱炖",
+    "content": "下会出现错误的是"
+  },
+  {
+    "id": "34",
+    "title": "程序执行结果",
+    "content": "如下：\\str1 = 'Runoob,example....wow!!!'\\str2 = \"exam\";\\Print(str1.find(str2, 5)) 打印的结果是"
+  },
+  {
+    "id": "35",
+    "title": "count（），index(), find()方法",
+    "content": "下面对count（），index(), find()方法描述正确的是"
+  },
+  {
+    "id": "36",
+    "title": "python中的关键字",
+    "content": "以下不是python中的关键字"
+  },
+  {
+    "id": "37",
+    "title": "程序执行结果",
+    "content": "调用以下函数返回的值是\\def myfun():\\pass"
+  },
+  {
+    "id": "38",
+    "title": "for循环执行之后......",
+    "content": "执行循环语句 for i in range (1,5):pass后， 变量i的值为"
+  },
+  {
+    "id": "39",
+    "title": "到底几次？",
+    "content": "循环语句for i in range (-3 , 24-1)的循环次数为"
+  },
+  {
+    "id": "310",
+    "title": "Python是？",
+    "content": "python语言是一种（）型，面向（）的程序设计语言"
+  },
+  {
+    "id": "311",
+    "title": "range()",
+    "content": "执行循环语句for i in range (1,5,2):print(i),循环体执行的次数为"
+  },
+  {
+    "id": "41",
+    "title": "多种情况",
+    "content": "设计一个程序，用于区分一个人的不同年龄段（0-17 child、18-45 youth、46-69 middle_aged、70- the_aged"
+  },
+  {
+    "id": "42",
+    "title":"两种情况",
+    "content":"现在有一个列表，列表中有若干个数字，请将其中的奇数拿出并放在另一个列表中，最后打印两个列表"
+  },
+  {
+    "id": "51",
+    "title": "while",
+    "content": "若k为整数，下述while循环执行的次数为( )\\k = 1000\\while k > 1\\ print(k)\\k=k//2"
+  },
+  {
+    "id": "52",
+    "title": "程序运行结果",
+    "content": "写出下列代码的运行结果\\def Sum(a, b=3 ,c=5):\\return sum([a,b,c])\\print(Sum(a=8,c=2))\\print(Sum(8))\\print(Sum(8,2))"
+  },
+  {
+    "id": "53",
+    "title": "无聊的运算",
+    "content": "下面程序的运行结果是\\s=0\\for i in range(1,101)\\s+= i\\else:\\print(1)"
+  },
+  {
+    "id": "54",
+    "title": "稍微无聊的运算",
+    "content": "下面程序的运行结果\\s=0\\for i in range(1,101):\\s+=i\\if i ==50\\print(s)\\break\\else:\\print(1)"
+  },
+  {
+    "id": "55",
+    "title": "变量",
+    "content": "下面代码的输出结果为\\def demo():\\x=5\\x=3\\demo()\\print(x)"
+  },
+  {
+    "id": "56",
+    "title": "函数居然返回出了这个...",
+    "content": "下列程序的运行结果为\\def demo(lst,k):\\return lst[k:]+lst[:k]\\lst=[1,2,3,4,,5,6]\\demo (lst,4)"
+  },
+  {
+    "id": "57",
+    "title": "使用函数返回值",
+    "content": "下列程序执行后，y的值为\\def f(x,y):\\return x**2+y**2\\y = f(f(1,3),5)"
+  },
+  {
+    "id": "58",
+    "title": "第一次import",
+    "content": "执行下列语句后显示的结果是\\ from math import sqrt\\print(sqrt(3)*sqrt(3) == 3)"
+  },
+  {
+    "id": "59",
+    "title": "想想就会了的数学题",
+    "content": "下列while循环执行的次数是\\k = 1000\\while k>1:\\print(k)\\k = k/2"
+  },
+  {
+    "id": "510",
+    "title": "神奇的符号lambda",
+    "content": "下列的语句的运行结果是\\f1 = lambda x:x*2\\f2 = lambda x:x**2"
+  },
+  {
+    "id": "511",
+    "title": "试试数组的特性",
+    "content": "下列python语句的输出结果是\\s1 =[ 4,0,6]\\s2 = s1\\s1[1] = 0\\print(s2)"
+  },
+  {
+    "id": "512",
+    "title": "又是while",
+    "content": "以下while循环的循环次数是\\ i = 0\\while(i<10):\\if(i<1):continue\\if(i == 5):break\\i+= 1"
+  },
+  {
+    "id": "513",
+    "title": "第一次input",
+    "content": "语句 x= input()执行时，如果从键盘输入12并按回车键，则x的值是"
+  },
+  {
+    "id": "514",
+    "title": "tuple()",
+    "content": "tuple(range(2,10,2))的返回结果是"
+  },
+  {
+    "id":"61" ,
+    "title": "暗杀名单",
+    "content": "暗杀名单：你是一个杀手，收到一张暗杀名单（lists），名单上有你要暗杀人物，请用for语句编译一段代码，查看暗杀的人物"
+  },
+  {
+    "id":"62" ,
+    "title": "使用range()",
+    "content": "range()函数的考察：你想输出1，2，3，4，那么请在给出的变量中选择并用for循环输出"
+  },
+  {
+    "id":"63" ,
+    "title": "切片",
+    "content": "运用切片的技能，从lists中切出前三个对象"
+  },
+  {
+    "id": "71",
+    "title": "神奇的‘+’",
+    "content": "写出下列代码的结果\\1. x = 4 , y = 5\\print ( x + y )\\2. x = '4' , y = '5'\\print ( x + y ) "
+  },
+  {
+    "id": "72",
+    "title": "如何系列之函数定义",
+    "content": "python如何定义一个函数？"
+  },
+  {
+    "id": "73",
+    "title": "程序运行结果",
+    "content": "下面代码哪些会输出1，2，3，这三个数字"
+  },
+  {
+    "id": "74",
+    "title": "大乱炖",
+    "content": "以下叙述正确的是"
+  },
+  {
+    "id": "75",
+    "title": "怎么又是你？复数",
+    "content": "关于python中的复数，下列说法错误的是"
+  },
+  {
+    "id": "76",
+    "title": "布尔值",
+    "content": "下列表达式的值为True的是 "
+  },
+  {
+    "id": "77",
+    "title": "Ascii码",
+    "content": "已知x = 43,ch = 'A', y = 1,则表达式(x >= y and ch < 'b' and y)的值是 "
+  },
+  {
+    "id": "78",
+    "title": "布尔值第二",
+    "content": "下列表达式中返回为True的是"
+  },
+  {
+    "id": "79",
+    "title": "哈？又是判断",
+    "content": " 下列Python语句正确的是"
+  },
+  {
+    "id": "710",
+    "title": "字典的创建",
+    "content": "以下不能创建一个字典的语句是"
+  },
+  {
+    "id": "711",
+    "title": "喵喵喵，字符串",
+    "content": "关于字符串下列说法错误的是"
+  }
+]
