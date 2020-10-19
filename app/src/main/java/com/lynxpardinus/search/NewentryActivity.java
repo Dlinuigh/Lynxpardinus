@@ -56,7 +56,7 @@ public class NewentryActivity extends AppCompatActivity {
         describe.setLeadText("描述");
         MyEditView example = findViewById(R.id.example);
         example.setLeadText("栗子");
-        helper = new MyDatabaseHelper(this, "Entries.db",CREATE_ENTRY,null, 1);
+        helper = new MyDatabaseHelper(this,CREATE_ENTRY, "Entries.db",null, 1);
         Button button = findViewById(R.id.save_to_database);
         button.setOnClickListener(v -> {
             SQLiteDatabase db = helper.getWritableDatabase();

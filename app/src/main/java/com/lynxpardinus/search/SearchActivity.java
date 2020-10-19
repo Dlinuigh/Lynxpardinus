@@ -33,7 +33,7 @@ public class SearchActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Context context =this;
         setContentView(R.layout.activity_search);
-        MyDatabaseHelper helper = new MyDatabaseHelper(context, "Entries.db",CREATE_ENTRY,null, 1);
+        MyDatabaseHelper helper = new MyDatabaseHelper(context,CREATE_ENTRY, "Entries.db",null, 1);
         SQLiteDatabase db = helper.getWritableDatabase();
         Cursor cursor = db.query("Entry", null,null, null, null,null,null);
         final ArrayList<String> initList = new ArrayList<>();
