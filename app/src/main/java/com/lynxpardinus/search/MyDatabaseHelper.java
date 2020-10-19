@@ -10,25 +10,17 @@ import androidx.annotation.Nullable;
 import java.util.Locale;
 
 public class MyDatabaseHelper extends SQLiteOpenHelper {
-    private final String CREATE_ENTRY ="create table Entry("
-            +"id integer primary key autoincrement,"
-            +"kinds text,"
-            +"name text,"+
-            "usage text,"
-            +"describe text,"
-            +"example text," +
-            "[CreatedTime] TimeStamp NOT NULL DEFAULT (datetime('now','localtime'))," +
-            "author text)";
     private final Context context;
-
-    public MyDatabaseHelper(@Nullable Context mcontext, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
+    private final String command;
+    public MyDatabaseHelper(@Nullable Context mcontext, String com, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
         super(mcontext, name, factory, version);
         context =mcontext;
+        command = com;
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL(CREATE_ENTRY);
+        db.execSQL(command);
         db.setLocale(Locale.CHINA);
         Toast.makeText(context, "成功创建了数据库",Toast.LENGTH_SHORT).show();
     }

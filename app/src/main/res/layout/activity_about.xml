@@ -5,17 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".about.AboutActivity">
+    <include
+        layout="@layout/app_bar_main"
+        android:layout_width="match_parent"
+        android:id="@+id/mess"
+        android:layout_height="?attr/actionBarSize"/>
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="3dp"
-        android:layout_marginTop="6dp"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mess"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:id="@+id/Icon"
         android:src="@mipmap/ic_launcher"
-        android:contentDescription="Our software icon" />
+        android:contentDescription="@string/temp_icon_describe"
+        tools:ignore="MissingConstraints" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

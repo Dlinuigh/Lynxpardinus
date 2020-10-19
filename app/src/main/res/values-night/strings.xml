@@ -5,4 +5,13 @@
     <string name="copyright">软件部分内容为原创，保留权益</string>
     <string name="search">检索</string>
     <string name="learn">学习</string>
+    <string name="statement">表述</string>
+    <string name="choice">选择</string>
+    <string name="program">编程</string>
+    <string name="home">主页面</string>
+    <string name="create_entry">创建词条</string>
+    <string name="temp_icon_describe">Our software icon</string>
+    <string name="lprogressbar">学习进度</string>
+    <string name="pprogressbar">练习进度</string>
+    <string name="navigation_header">Navigation header</string>
 </resources>

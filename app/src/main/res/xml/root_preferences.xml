@@ -1,6 +1,5 @@
 <PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
-
     <PreferenceCategory app:title="外观">
         <SeekBarPreference app:title="字体大小"
             app:min="12"

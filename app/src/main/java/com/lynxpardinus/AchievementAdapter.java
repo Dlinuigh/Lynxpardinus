@@ -1,4 +1,4 @@
-package com.lynxpardinus.search;
+package com.lynxpardinus;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -13,26 +13,23 @@ import androidx.cardview.widget.CardView;
 import androidx.preference.PreferenceManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.lynxpardinus.R;
-
 import java.util.ArrayList;
 
-public class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.ViewHolder> {
+public class AchievementAdapter extends RecyclerView.Adapter<AchievementAdapter.ViewHolder> {
     private final ArrayList<String> arrayList;
     @SuppressLint("StaticFieldLeak")
     private static Context context;
-    public ResultAdapter(Context mcontext, ArrayList<String> results){
-        arrayList=results;
-        context=mcontext;
+    public AchievementAdapter(Context mcontext, ArrayList<String> stringArrayList){
+        arrayList = stringArrayList;
+        context = mcontext;
     }
     static class ViewHolder extends RecyclerView.ViewHolder{
-
         CardView cardView;
         TextView textView;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            cardView = (CardView)itemView;
-            textView=itemView.findViewById(R.id.entry);
+            cardView = (CardView) itemView;
+            textView = itemView.findViewById(R.id.achievement);
             SharedPreferences preferences= PreferenceManager.getDefaultSharedPreferences(context);
             int precent=preferences.getInt("r-value",50);
             float radius= (float) (precent*0.8);
@@ -45,7 +42,7 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.ViewHolder
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new ViewHolder(LayoutInflater.from(context).inflate(R.layout.entry, parent, false));
+        return new ViewHolder(LayoutInflater.from(context).inflate(R.layout.achievement, parent, false));
     }
 
     @Override

@@ -18,6 +18,15 @@ import com.lynxpardinus.selfview.MyEditView;
 
 public class NewentryActivity extends AppCompatActivity {
 
+    public final String CREATE_ENTRY ="create table Entry("
+            +"id integer primary key autoincrement,"
+            +"kinds text,"
+            +"name text,"+
+            "usage text,"
+            +"describe text,"
+            +"example text," +
+            "[CreatedTime] TimeStamp NOT NULL DEFAULT (datetime('now','localtime'))," +
+            "author text)";
     private MyDatabaseHelper helper;
     private Context context;
     @Override
@@ -47,29 +56,26 @@ public class NewentryActivity extends AppCompatActivity {
         describe.setLeadText("描述");
         MyEditView example = findViewById(R.id.example);
         example.setLeadText("栗子");
-        helper = new MyDatabaseHelper(this, "Entries.db",null, 1);
+        helper = new MyDatabaseHelper(this, "Entries.db",CREATE_ENTRY,null, 1);
         Button button = findViewById(R.id.save_to_database);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                SQLiteDatabase db = helper.getWritableDatabase();
-                ContentValues values = new ContentValues();
-                values.put("name",name.getText().toString());
-                values.put("kinds",kind[0]);
-                values.put("usage",usage.getText().toString());
-                values.put("describe",describe.getText().toString());
-                values.put("example",example.getText().toString());
-                String [] columns = {"kinds","name"};
-                Cursor cursor = db.query("Entry", columns, "name=?", new String [] {name.getText().toString()}, null, null, null);
-                if(cursor.getCount()==0){
-                    db.insert("Entry", null, values);
-                    cursor.close();
-                }else{
-                    Toast.makeText(context, "你已经添加了这个词条，请不要重复点击。",Toast.LENGTH_SHORT).show();
-                }
-                db.close();
-                values.clear();
+        button.setOnClickListener(v -> {
+            SQLiteDatabase db = helper.getWritableDatabase();
+            ContentValues values = new ContentValues();
+            values.put("name",name.getText().toString());
+            values.put("kinds",kind[0]);
+            values.put("usage",usage.getText().toString());
+            values.put("describe",describe.getText().toString());
+            values.put("example",example.getText().toString());
+            String [] columns = {"kinds","name"};
+            Cursor cursor = db.query("Entry", columns, "name=?", new String [] {name.getText().toString()}, null, null, null);
+            if(cursor.getCount()==0){
+                db.insert("Entry", null, values);
+                cursor.close();
+            }else{
+                Toast.makeText(context, "你已经添加了这个词条，请不要重复点击。",Toast.LENGTH_SHORT).show();
             }
+            db.close();
+            values.clear();
         });
     }
 }

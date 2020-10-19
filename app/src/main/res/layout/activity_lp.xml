@@ -5,9 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".lp.LpActivity">
+    <include
+        layout="@layout/app_bar_main"
+        android:id="@+id/mess"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"/>
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/mess"
         android:id="@+id/arrayList"/>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

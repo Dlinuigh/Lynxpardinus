@@ -4,35 +4,37 @@
 
     <application
         android:allowBackup="true"
+        android:fullBackupContent="@xml/root_preferences"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LynxPardinus">
-        <activity android:name=".lp.ProgramActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".lp.ChoiceActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".lp.StatementActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".search.NewentryActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".search.SearchActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".about.AboutActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".lp.ProgramActivity"
+            android:label="@string/program" />
+        <activity
+            android:name=".lp.ChoiceActivity"
+            android:label="@string/choice" />
+        <activity
+            android:name=".lp.StatementActivity"
+            android:label="@string/statement" />
+        <activity
+            android:name=".search.NewentryActivity"
+            android:label="@string/create_entry" />
+        <activity
+            android:name=".search.SearchActivity"
+            android:label="@string/search" />
+        <activity
+            android:name=".about.AboutActivity"
+            android:label="@string/about" />
         <activity
             android:name=".settings.SettingsActivity"
-            android:label="@string/title_activity_settings"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity
-            android:name=".lp.LpActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:label="@string/title_activity_settings" />
+        <activity android:name=".lp.LpActivity" />
         <activity android:name=".account.LogoutActivity" />
         <activity android:name=".account.LoginActivity" />
-        <activity
-            android:name=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

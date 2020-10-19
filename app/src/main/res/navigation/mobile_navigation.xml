@@ -3,8 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    app:startDestination="@id/nav_learn"
-    android:id="@+id/mobile_navigation.xml">
+    app:startDestination="@+id/nav_learn"
+    android:id="@+id/mobile_navigation">
     <activity
         android:id="@+id/nav_search"
         android:name="com.lynxpardinus.search.SearchActivity"
