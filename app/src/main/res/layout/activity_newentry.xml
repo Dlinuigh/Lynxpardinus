@@ -5,14 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".search.NewentryActivity">
-
-
+    <include
+        layout="@layout/app_bar_main"
+        android:layout_width="match_parent"
+        android:id="@+id/mess"
+        android:layout_height="?attr/actionBarSize"/>
     <Spinner
         android:id="@+id/spinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:entries="@array/kinds"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mess"
         app:layout_constraintStart_toStartOf="parent"/>
     <com.lynxpardinus.selfview.MyEditView
         android:layout_width="match_parent"
@@ -52,14 +55,16 @@
         app:layout_constraintTop_toBottomOf="@id/example"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/create_entry"
         android:id="@+id/save_to_database"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/upload"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="8dp"
         android:clickable="true"
-        app:srcCompat="@drawable/abc_vector_test"
+        app:srcCompat="@drawable/ic_baseline_upload_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:contentDescription="upload"

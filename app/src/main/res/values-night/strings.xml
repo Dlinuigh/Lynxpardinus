@@ -14,4 +14,9 @@
     <string name="lprogressbar">学习进度</string>
     <string name="pprogressbar">练习进度</string>
     <string name="navigation_header">Navigation header</string>
+    <string name="logout">退出登录</string>
+    <string name="sendCode">发送验证码</string>
+    <string name="LoginMethod">登录方式</string>
+    <string name="HuaweiLogin">华为账号验证登录</string>
+    <string name="app_launcher">app launcher</string>
 </resources>

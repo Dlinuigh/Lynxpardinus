@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.lynxpardinus">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+    
     <application
         android:allowBackup="true"
         android:fullBackupContent="@xml/root_preferences"
@@ -41,6 +43,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <meta-data
+            android:name="com.huawei.hms.client.appid"
+            android:value="103078977"/>
+        <meta-data
+            android:name="com.huawei.hms.client.cpid"
+            android:value="80086000305068379"/>
     </application>
 
 </manifest>

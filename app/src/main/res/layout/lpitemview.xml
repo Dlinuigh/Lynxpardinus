@@ -11,6 +11,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:textAlignment="viewStart"
+            android:gravity="start|center_vertical"
+            android:layout_marginStart="6dp"
             android:id="@+id/item"
             android:ellipsize="end"/>
     </RelativeLayout>

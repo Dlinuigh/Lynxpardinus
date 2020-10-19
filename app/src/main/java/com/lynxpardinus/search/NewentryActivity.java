@@ -2,6 +2,7 @@ package com.lynxpardinus.search;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -18,15 +19,15 @@ import com.lynxpardinus.selfview.MyEditView;
 
 public class NewentryActivity extends AppCompatActivity {
 
-    public final String CREATE_ENTRY ="create table Entry("
+    public final String CREATE_ENTRY ="create table Entry ("
             +"id integer primary key autoincrement,"
             +"kinds text,"
-            +"name text,"+
-            "usage text,"
+            +"name text,"
+            +"usage text,"
             +"describe text,"
-            +"example text," +
-            "[CreatedTime] TimeStamp NOT NULL DEFAULT (datetime('now','localtime'))," +
-            "author text)";
+            +"example text,"
+            +"[CreatedTime] TimeStamp NOT NULL DEFAULT (datetime('now','localtime')),"
+            +"author text)";
     private MyDatabaseHelper helper;
     private Context context;
     @Override
@@ -56,7 +57,7 @@ public class NewentryActivity extends AppCompatActivity {
         describe.setLeadText("描述");
         MyEditView example = findViewById(R.id.example);
         example.setLeadText("栗子");
-        helper = new MyDatabaseHelper(this,CREATE_ENTRY, "Entries.db",null, 1);
+        helper = new MyDatabaseHelper(context,CREATE_ENTRY, "Entries.db",null, 1);
         Button button = findViewById(R.id.save_to_database);
         button.setOnClickListener(v -> {
             SQLiteDatabase db = helper.getWritableDatabase();
@@ -66,14 +67,16 @@ public class NewentryActivity extends AppCompatActivity {
             values.put("usage",usage.getText().toString());
             values.put("describe",describe.getText().toString());
             values.put("example",example.getText().toString());
+            SharedPreferences sharedPreferences = getSharedPreferences("userInfo",MODE_PRIVATE);
+            values.put("author",sharedPreferences.getString("accountName",""));
             String [] columns = {"kinds","name"};
             Cursor cursor = db.query("Entry", columns, "name=?", new String [] {name.getText().toString()}, null, null, null);
             if(cursor.getCount()==0){
                 db.insert("Entry", null, values);
-                cursor.close();
             }else{
                 Toast.makeText(context, "你已经添加了这个词条，请不要重复点击。",Toast.LENGTH_SHORT).show();
             }
+            cursor.close();
             db.close();
             values.clear();
         });

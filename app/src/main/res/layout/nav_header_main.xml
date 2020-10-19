@@ -8,17 +8,19 @@
         android:id="@+id/Icon"
         android:paddingTop="8dp"
         android:layout_marginTop="30dp"
-        android:layout_marginStart="18dp"
+        android:layout_gravity="center"
         android:src="@mipmap/ic_launcher"
         android:contentDescription="@string/navigation_header" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/accountName"
+        android:textAlignment="center"
         android:layout_margin="3dp"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/accountEmail"
+        android:textAlignment="center"
         android:layout_margin="3dp"/>
 </LinearLayout>

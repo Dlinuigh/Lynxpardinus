@@ -11,6 +11,10 @@ import android.os.Environment;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageButton;
+import android.widget.SeekBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -26,6 +30,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.navigation.NavigationView;
 import com.lynxpardinus.about.AboutActivity;
+import com.lynxpardinus.account.LoginActivity;
+import com.lynxpardinus.account.LogoutActivity;
 import com.lynxpardinus.lp.LpActivity;
 import com.lynxpardinus.search.SearchActivity;
 import com.lynxpardinus.settings.SettingsActivity;
@@ -45,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
     public static final String DB_PATH = "/data"
             + Environment.getDataDirectory().getAbsolutePath() + "/"
             + PACKAGE_NAME;  //在手机里存放数据库的位置
-    private String command = "create table Achievement("+
+    private final String command = "create table Achievement("+
             "id integer primary key autoincrement,"+
             "title text,"+
             "describe text,"+
@@ -53,6 +59,8 @@ public class MainActivity extends AppCompatActivity {
             "[CreatedTime] TimeStamp NOT NULL DEFAULT (datetime('now','localtime')))";
     private Context context;
     private DrawerLayout drawerLayout;
+    private int learn_progress;
+    private int practice_progress;
     @SuppressLint("NonConstantResourceId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,6 +86,51 @@ public class MainActivity extends AppCompatActivity {
         AchievementAdapter adapter = new AchievementAdapter(this, achieveName);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false));
+
+        SeekBar lpro = findViewById(R.id.progressBar1);
+        SeekBar ppro = findViewById(R.id.progressBar2);
+        lpro.setProgress(learn_progress);
+        lpro.setMax(100);
+        ppro.setProgress(practice_progress);
+        ppro.setMax(100);
+        lpro.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                lpro.setProgress(learn_progress);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+        ppro.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                ppro.setProgress(practice_progress);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
+        ImageButton login = findViewById(R.id.login);
+        ImageButton logout = findViewById(R.id.logout);
+        login.setOnClickListener(v -> startActivity(new Intent(context, LoginActivity.class)));
+        logout.setOnClickListener((View v) -> startActivity(new Intent(context, LogoutActivity.class)));
+
         context = this;
         drawerLayout = findViewById(R.id.drawer_layout);
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -101,6 +154,16 @@ public class MainActivity extends AppCompatActivity {
         });
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setCheckedItem(R.id.nav_learn);
+        SharedPreferences sharedPreferences = getSharedPreferences("userInfo",MODE_PRIVATE);
+        View view = navigationView.getHeaderView(0);
+        final TextView accountName = view.findViewById(R.id.accountName);
+        accountName.setText(sharedPreferences.getString("accountName",""));
+        final TextView accountEmail = view.findViewById(R.id.accountEmail);
+        accountEmail.setText(sharedPreferences.getString("accountEmail",""));
+        if(sharedPreferences.getString("accountName", "").equals("")){
+            startActivity(new Intent(this, LoginActivity.class));
+        }
+
         navigationView.setNavigationItemSelectedListener(item -> {
            switch (item.getItemId()){
                case R.id.nav_learn:

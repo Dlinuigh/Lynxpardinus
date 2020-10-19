@@ -1,23 +1,7 @@
 <resources>
     <string name="app_name">LynxPardinus</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_settings">SettingsActivity</string>
-
-    <!-- Preference Titles -->
-    <string name="messages_header">Messages</string>
-    <string name="sync_header">Sync</string>
-
-    <!-- Messages Preferences -->
-    <string name="signature_title">Your signature</string>
-    <string name="reply_title">Default reply action</string>
-
-    <!-- Sync Preferences -->
-    <string name="sync_title">Sync email periodically</string>
-    <string name="attachment_title">Download incoming attachments</string>
-    <string name="attachment_summary_on">Automatically download attachments for incoming emails
-    </string>
-    <string name="attachment_summary_off">Only download attachments when manually requested</string>
     <string name="about_title">这是关于的测试标题</string>
     <string name="about_mainpage">这个链接可以直达我们的主页</string>
     <string name="copyright">软件部分内容为原创，保留权益</string>
@@ -32,21 +16,16 @@
     <string name="choice">选择</string>
     <string name="program">编程</string>
     <string name="title_activity_home">MainActivity</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="home">主页面</string>
     <string name="create_entry">创建词条</string>
     <string name="temp_icon_describe">Our software icon</string>
     <string name="lprogressbar">学习进度</string>
     <string name="pprogressbar">练习进度</string>
     <string name="navigation_header">Navigation header</string>
+    <string name="logout">退出登录</string>
+    <string name="sendCode">发送验证码</string>
+    <string name="LoginMethod">登录方式</string>
+    <string name="HuaweiLogin">华为账号验证登录</string>
+    <string name="app_launcher">app launcher</string>
 </resources>
