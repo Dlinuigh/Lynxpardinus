@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="about_title">这是关于的测试标题</string>
-    <string name="about_mainpage">这个链接可以直达我们的主页</string>
+    <string name="about_title">彩蛋</string>
+    <string name="about_mainpage">穷人的静态网页</string>
     <string name="copyright">软件部分内容为原创，保留权益</string>
     <string name="search">检索</string>
     <string name="learn">学习</string>
@@ -19,4 +19,6 @@
     <string name="LoginMethod">登录方式</string>
     <string name="HuaweiLogin">华为账号验证登录</string>
     <string name="app_launcher">app launcher</string>
+    <string name="MarkMarked">论这个软件有多么...</string>
+    <string name="atus">加+W X ：12xweaf231</string>
 </resources>

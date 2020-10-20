@@ -7,6 +7,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.huawei.agconnect.auth.AGConnectAuth;
+import com.huawei.agconnect.auth.AGConnectUser;
 import com.huawei.hmf.tasks.Task;
 import com.huawei.hms.support.hwid.HuaweiIdAuthManager;
 import com.huawei.hms.support.hwid.request.HuaweiIdAuthParams;
@@ -31,13 +33,24 @@ public class LogoutActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.remove("accountName");
         editor.remove("accountEmail");
+        editor.putBoolean("accountStatus",false);
         editor.apply();
+        AGConnectUser agcUserPhone = AGConnectAuth.getInstance().getCurrentUser();
+        if (agcUserPhone != null) {
+            AGConnectAuth.getInstance().signOut();
+        }
+        AGConnectUser agcUserEmail = AGConnectAuth.getInstance().getCurrentUser();
+        if (agcUserEmail != null) {
+            AGConnectAuth.getInstance().signOut();
+        }
     }
     private void signOut() {
         Task<Void> signOutTask = mAuthManager.signOut();
         signOutTask.addOnSuccessListener(aVoid -> {
             Log.i(TAG, "signOut Success");
             Toast.makeText(this, "退出发生变化",Toast.LENGTH_LONG).show();
-        }).addOnFailureListener(e -> Log.i(TAG, "signOut fail"));
+        }).addOnFailureListener(e -> {
+            Log.i(TAG, "signOut fail");
+        });
     }
 }

@@ -8,6 +8,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.Environment;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -29,6 +30,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.navigation.NavigationView;
+import com.huawei.agconnect.config.AGConnectServicesConfig;
+import com.huawei.hms.aaid.HmsInstanceId;
+import com.huawei.hms.common.ApiException;
 import com.lynxpardinus.about.AboutActivity;
 import com.lynxpardinus.account.LoginActivity;
 import com.lynxpardinus.account.LogoutActivity;
@@ -51,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
     public static final String DB_PATH = "/data"
             + Environment.getDataDirectory().getAbsolutePath() + "/"
             + PACKAGE_NAME;  //在手机里存放数据库的位置
+    private static final String TAG = "MainActivity";
     private final String command = "create table Achievement("+
             "id integer primary key autoincrement,"+
             "title text,"+
@@ -65,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        context = this;
         SharedPreferences preferences= PreferenceManager.getDefaultSharedPreferences(this);
         final boolean darkModeOn=preferences.getBoolean("darkMode",false);
         setNightMode(darkModeOn);
@@ -74,16 +80,18 @@ public class MainActivity extends AppCompatActivity {
         SQLiteDatabase db = openDatabase(DB_PATH+"/"+DB_NAME,"Achievement.db");
         db.setLocale(Locale.CHINA);
         ArrayList<String> achieveName = new ArrayList<>();
+        ArrayList<String> describes = new ArrayList<>();
         Cursor cursor = db.query("Achievement",null, null,null,null,null,null);
         if(cursor.moveToFirst()){
             do{
                 achieveName.add(cursor.getString(cursor.getColumnIndex("title")));
+                describes.add(cursor.getString(cursor.getColumnIndex("describe")));
             }while (cursor.moveToNext());
         }
         cursor.close();
         db.close();
         RecyclerView recyclerView = findViewById(R.id.achievement);
-        AchievementAdapter adapter = new AchievementAdapter(this, achieveName);
+        AchievementAdapter adapter = new AchievementAdapter(this, achieveName, describes);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false));
 
@@ -128,7 +136,18 @@ public class MainActivity extends AppCompatActivity {
 
         ImageButton login = findViewById(R.id.login);
         ImageButton logout = findViewById(R.id.logout);
-        login.setOnClickListener(v -> startActivity(new Intent(context, LoginActivity.class)));
+        SharedPreferences sharedPreferences = getSharedPreferences("userInfo",MODE_PRIVATE);
+        if(!sharedPreferences.getBoolean("accountStatus", false)){
+            startActivity(new Intent(context, LoginActivity.class));
+        }
+        login.setOnClickListener(v -> {
+            if(!sharedPreferences.getBoolean("accountStatus",false)){
+                startActivity(new Intent(context, LoginActivity.class));
+            }else{
+                Toast.makeText(context, "你已经登录了",Toast.LENGTH_LONG).show();
+            }
+
+        });
         logout.setOnClickListener((View v) -> startActivity(new Intent(context, LogoutActivity.class)));
 
         context = this;
@@ -154,15 +173,12 @@ public class MainActivity extends AppCompatActivity {
         });
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setCheckedItem(R.id.nav_learn);
-        SharedPreferences sharedPreferences = getSharedPreferences("userInfo",MODE_PRIVATE);
+
         View view = navigationView.getHeaderView(0);
         final TextView accountName = view.findViewById(R.id.accountName);
         accountName.setText(sharedPreferences.getString("accountName",""));
         final TextView accountEmail = view.findViewById(R.id.accountEmail);
         accountEmail.setText(sharedPreferences.getString("accountEmail",""));
-        if(sharedPreferences.getString("accountName", "").equals("")){
-            startActivity(new Intent(this, LoginActivity.class));
-        }
 
         navigationView.setNavigationItemSelectedListener(item -> {
            switch (item.getItemId()){
@@ -191,6 +207,7 @@ public class MainActivity extends AppCompatActivity {
            }
            return true;
         });
+        getToken();
     }
 
     @Override
@@ -233,5 +250,26 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
         return null;
+    }
+    private void getToken() {
+        new Thread() {
+            @Override
+            public void run() {
+                try {
+                    // read from agconnect-services.json
+                    String appId = AGConnectServicesConfig.fromContext(MainActivity.this).getString("client/app_id");
+                    String token = HmsInstanceId.getInstance(MainActivity.this).getToken(appId, "HCM");
+                    Log.i(TAG, "get token:" + token);
+                    if(!TextUtils.isEmpty(token)) {
+                        sendRegTokenToServer(token);
+                    }
+                } catch (ApiException e) {
+                    Log.e(TAG, "get token failed, " + e);
+                }
+            }
+        }.start();
+    }
+    private void sendRegTokenToServer(String token) {
+        Log.i(TAG, "sending token to server. token:" + token);
     }
 }

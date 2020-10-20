@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".account.LoginActivity">
-
     <ImageView
         android:id="@+id/accountIcon"
         android:layout_width="match_parent"
@@ -23,117 +22,51 @@
         android:layout_marginVertical="3dp"
         app:layout_constraintTop_toBottomOf="@id/accountIcon"
         android:id="@+id/nickName"/>
-    <com.lynxpardinus.selfview.MyEditView
-        android:layout_width="0dp"
-        android:layout_marginHorizontal="10dp"
-        android:layout_marginVertical="3dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/accountEmail"
-        android:id="@+id/accountPhone"
-        android:autofillHints=""
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/sendPhoneCode"
-        android:inputType="textEmailAddress|phone" />
-    <com.lynxpardinus.selfview.MyEditView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="10dp"
-        android:layout_marginVertical="3dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/sendEmailCode"
-        app:layout_constraintTop_toBottomOf="@id/nickName"
-        android:id="@+id/accountEmail"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/sendPhoneCode"
-        android:text="@string/sendCode"
-        android:layout_marginHorizontal="10dp"
-        android:layout_marginVertical="3dp"
-        app:layout_constraintStart_toEndOf="@+id/accountPhone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sendEmailCode"/>
-    <com.lynxpardinus.selfview.MyEditView
-        app:layout_constraintTop_toBottomOf="@+id/accountPhone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:id="@+id/code"
-        android:layout_marginHorizontal="10dp"
-        android:layout_marginVertical="3dp"
-        android:autofillHints=""
-        android:inputType="numberPassword" />
-    <com.lynxpardinus.selfview.MyEditView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/password"
-        android:inputType="textPassword"
-        app:layout_constraintTop_toBottomOf="@id/code"/>
-    <com.lynxpardinus.selfview.MyEditView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/passwordAgain"
-        android:inputType="textPassword"
-        app:layout_constraintTop_toBottomOf="@id/password"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/divideLine"
-        app:layout_constraintTop_toBottomOf="@+id/passwordAgain"
+        android:layout_marginTop="36dp"
+        app:layout_constraintTop_toBottomOf="@+id/nickName"
         android:text="@string/LoginMethod"
+        android:gravity="center"
         android:textAlignment="center"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/sendEmailCode"
-        android:layout_marginHorizontal="10dp"
-        android:layout_marginVertical="3dp"
-        android:text="@string/sendCode"
-        app:layout_constraintStart_toEndOf="@+id/accountEmail"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nickName"/>
-
     <ImageButton
         android:id="@+id/hwid_signin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="10dp"
-        android:layout_marginVertical="3dp"
+        android:layout_marginTop="6dp"
+        android:foregroundGravity="center_vertical"
         android:background="@drawable/hwid_auth_button_round_normal"
-        android:foregroundGravity="center"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/nosignup"
+        app:layout_constraintStart_toEndOf="@id/phone"
+        app:layout_constraintEnd_toStartOf="@+id/email"
         app:layout_constraintTop_toBottomOf="@+id/divideLine"
         android:contentDescription="@string/HuaweiLogin" />
-
     <Button
         android:id="@+id/nosignup"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:layout_marginHorizontal="10dp"
-        android:layout_marginVertical="3dp"
-        app:layout_constraintEnd_toStartOf="@+id/phone"
         android:background="@drawable/ic_baseline_not_interested_24"
-        app:layout_constraintStart_toEndOf="@+id/hwid_signin"
-        app:layout_constraintTop_toBottomOf="@+id/divideLine" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="48dp"
+        app:layout_constraintBottom_toBottomOf="parent" />
     <Button
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:id="@+id/phone"
-        android:layout_marginHorizontal="10dp"
-        android:layout_marginVertical="3dp"
-        app:layout_constraintEnd_toStartOf="@id/email"
-        app:layout_constraintStart_toEndOf="@+id/nosignup"
+        android:gravity="center_vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/hwid_signin"
         android:background="@drawable/ic_baseline_phone_24"
         app:layout_constraintTop_toBottomOf="@+id/divideLine"/>
     <Button
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:id="@+id/email"
-        android:layout_marginHorizontal="10dp"
-        android:layout_marginVertical="3dp"
+        android:gravity="center_vertical"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/phone"
+        app:layout_constraintStart_toEndOf="@id/hwid_signin"
         android:background="@drawable/ic_baseline_email_24"
         app:layout_constraintTop_toBottomOf="@+id/divideLine"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -56,5 +56,10 @@ dependencies {
     implementation 'com.huawei.agconnect:agconnect-auth:1.4.1.300'
     implementation 'com.huawei.hms:hwid:5.0.1.301'
     implementation 'com.huawei.hms:push:5.0.0.300'
+    implementation 'cn.carbs.android:ExpandableTextView:1.0.0'
+    //文本过长 点击展开全部
+    implementation 'com.ms-square:expandableTextView:0.1.4'
+
+
 }
 apply plugin: 'com.huawei.agconnect'

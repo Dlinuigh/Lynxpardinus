@@ -50,14 +50,16 @@ public class SearchActivity extends AppCompatActivity {
         SQLiteDatabase db = openDatabase(DB_PATH+DB_NAME,"Entries.db");
         Cursor cursor = db.query("Entry", null,null, null, null,null,null);
         final ArrayList<String> initList = new ArrayList<>();
+        final ArrayList<String> strings = new ArrayList<>();
         if(cursor.moveToFirst()){
             do{
-                initList.add(cursor.getString(cursor.getColumnIndex("name")) + " | "+cursor.getString(cursor.getColumnIndex("describe")));
+                initList.add(cursor.getString(cursor.getColumnIndex("name"))+"\n" +cursor.getString(cursor.getColumnIndex("usage")));
+                strings.add(cursor.getString(cursor.getColumnIndex("describe"))+"\n"+cursor.getString(cursor.getColumnIndex("example")));
             }while (cursor.moveToNext());
         }
         cursor.close();
         RecyclerView recyclerView = findViewById(R.id.search_result);
-        ResultAdapter adapter = new ResultAdapter(this, initList);
+        ResultAdapter adapter = new ResultAdapter(this, initList, strings);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false));
         SearchView searchView = findViewById(R.id.search);
@@ -70,6 +72,7 @@ public class SearchActivity extends AppCompatActivity {
             @Override
             public boolean onQueryTextSubmit(String query) {
                 initList.clear();
+                strings.clear();
                 Cursor cursor1;
                 if(query.equals("*")){
                      cursor1= db.query("Entry", null,null, null, null,null,null);
@@ -78,7 +81,8 @@ public class SearchActivity extends AppCompatActivity {
                 }
                 if(cursor1.moveToFirst()) {
                     do {
-                        initList.add(cursor1.getString(cursor1.getColumnIndex("name")) + " | " + cursor1.getString(cursor1.getColumnIndex("describe")));
+                        initList.add(cursor1.getString(cursor1.getColumnIndex("name"))+"\n" +cursor1.getString(cursor1.getColumnIndex("usage")));
+                        strings.add(cursor1.getString(cursor1.getColumnIndex("describe"))+"\n"+cursor1.getString(cursor1.getColumnIndex("example")));
                     } while (cursor1.moveToNext());
                 }
                 cursor1.close();
