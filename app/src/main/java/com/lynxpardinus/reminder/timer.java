@@ -33,7 +33,7 @@ public class timer extends BroadcastReceiver {
         Notification.Builder notification=new Notification.Builder(context,CHANNEL_ID);
         notification.setAutoCancel(true);
         notification.setContentTitle("学习时间小提示")
-                .setContentText("你已经学习5分钟啦！快玩半小时游戏休息一下吧！")
+                .setContentText("你已经学习很久了啦！快玩半小时游戏休息一下吧！")
                 .setWhen(System.currentTimeMillis())
                 .setSmallIcon(R.drawable.ic_baseline_alarm_24)
                 .setDefaults(Notification.DEFAULT_SOUND|Notification.DEFAULT_VIBRATE);

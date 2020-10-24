@@ -214,11 +214,10 @@ public class MainActivity extends AppCompatActivity {
         });
         getToken();
 
-        /*
         if(preferences.getBoolean("reminder",false)){
             startService(new Intent(this, LongRunningService.class));
-        }*/
-        startService(new Intent(this, LongRunningService.class));
+        }
+        //startService(new Intent(this, LongRunningService.class));
     }
 
     @Override

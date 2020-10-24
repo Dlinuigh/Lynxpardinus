@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.IBinder;
 import android.os.SystemClock;
+import android.util.Log;
 
 import androidx.preference.PreferenceManager;
 
@@ -34,7 +35,7 @@ public class LongRunningService extends Service {
         //读者可以修改此处的Minutes从而改变提醒间隔时间
         //此处是设置每隔90分钟启动一次
         //这是90分钟的毫秒数
-        //Log.e("LongRunningService", "hello");
+        Log.e("LongRunningService", "hello");
 
         int Minutes = time2*60*1000;
         //SystemClock.elapsedRealtime()表示1970年1月1日0点至今所经历的时间
