@@ -5,7 +5,7 @@ plugins {
 android {
     signingConfigs {
         debug {
-            storeFile file('/home/dinglinghui/文档/StudioProjects/Key/signKeys.jks')
+            storeFile file('/home/dinglinghui/Documents/StudioProjects/Key/signKeys.jks')
             storePassword '48526plokm'
             keyAlias 'lynxpardinus'
             keyPassword '123456'

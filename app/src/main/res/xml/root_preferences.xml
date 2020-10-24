@@ -5,7 +5,7 @@
             app:min="12"
             android:max="24"
             android:key="fontSize"/>
-        <SwitchPreference app:title="自动切换夜间模式"
+        <SwitchPreference app:title="切换夜间模式"
             android:key="darkMode"
             android:defaultValue="false"/>
         <SeekBarPreference app:title="卡片圆角"
@@ -20,9 +20,27 @@
     </PreferenceCategory>
     <PreferenceCategory app:title="反馈系统信息">
         <EditTextPreference app:title="默认联系方式"
-            android:key="contact"/>
+            android:key="contact"
+            android:defaultValue="299792458"/>
         <EditTextPreference app:title="默认昵称"
-            android:key="nickname"/>
+            android:key="nickname"
+            android:defaultValue="风氢羊"/>
     </PreferenceCategory>
-
+    <PreferenceCategory app:title="提醒功能">
+        <SwitchPreference app:title="开启提醒"
+            android:key="reminder"
+            android:defaultValue="false"/>
+        <SeekBarPreference  app:title="时"
+            android:key="hour"
+            android:dependency="reminder"
+            android:max="23"
+            android:defaultValue="8"
+            app:min="0"/>
+        <SeekBarPreference  app:title="分"
+            android:key="minute"
+            android:max="59"
+            android:dependency="reminder"
+            android:defaultValue="30"
+            app:min="0"/>
+    </PreferenceCategory>
 </PreferenceScreen>

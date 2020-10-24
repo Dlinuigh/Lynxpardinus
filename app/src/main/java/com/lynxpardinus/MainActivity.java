@@ -37,6 +37,7 @@ import com.lynxpardinus.about.AboutActivity;
 import com.lynxpardinus.account.LoginActivity;
 import com.lynxpardinus.account.LogoutActivity;
 import com.lynxpardinus.lp.LpActivity;
+import com.lynxpardinus.reminder.LongRunningService;
 import com.lynxpardinus.search.SearchActivity;
 import com.lynxpardinus.settings.SettingsActivity;
 
@@ -101,6 +102,7 @@ public class MainActivity extends AppCompatActivity {
         lpro.setMax(100);
         ppro.setProgress(practice_progress);
         ppro.setMax(100);
+        /*
         lpro.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -133,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
+*/
         ImageButton login = findViewById(R.id.login);
         ImageButton logout = findViewById(R.id.logout);
         SharedPreferences sharedPreferences = getSharedPreferences("userInfo",MODE_PRIVATE);
@@ -208,6 +210,9 @@ public class MainActivity extends AppCompatActivity {
            return true;
         });
         getToken();
+        if(preferences.getBoolean("reminder",false)){
+            startService(new Intent(this, LongRunningService.class));
+        }
     }
 
     @Override
