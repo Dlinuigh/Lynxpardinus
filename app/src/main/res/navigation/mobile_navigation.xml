@@ -21,6 +21,11 @@
         android:label="练习"
         tools:layout="@layout/activity_lp"/>
     <activity
+        android:id="@+id/nav_remind"
+        android:name="com.lynxpardinus.reminder.AlarmActivity"
+        android:label="提醒"
+        tools:layout="@layout/activity_alarm"/>
+    <activity
         android:id="@+id/nav_settings"
         android:name="com.lynxpardinus.settings.SettingsActivity"
         android:label="设置"

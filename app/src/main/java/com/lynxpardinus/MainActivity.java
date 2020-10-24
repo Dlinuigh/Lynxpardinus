@@ -37,6 +37,7 @@ import com.lynxpardinus.about.AboutActivity;
 import com.lynxpardinus.account.LoginActivity;
 import com.lynxpardinus.account.LogoutActivity;
 import com.lynxpardinus.lp.LpActivity;
+import com.lynxpardinus.reminder.AlarmActivity;
 import com.lynxpardinus.reminder.LongRunningService;
 import com.lynxpardinus.search.SearchActivity;
 import com.lynxpardinus.settings.SettingsActivity;
@@ -206,13 +207,18 @@ public class MainActivity extends AppCompatActivity {
                    Intent Aintent = new Intent(context, AboutActivity.class);
                    startActivity(Aintent);
                    break;
+               case R.id.nav_remind:
+                   startActivity(new Intent(context, AlarmActivity.class));
            }
            return true;
         });
         getToken();
+
+        /*
         if(preferences.getBoolean("reminder",false)){
             startService(new Intent(this, LongRunningService.class));
-        }
+        }*/
+        startService(new Intent(this, LongRunningService.class));
     }
 
     @Override

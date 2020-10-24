@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">LynxPardinus</string>
+    <string name="app_name">Lynx</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="title_activity_settings">SettingsActivity</string>
     <string name="about_title">关于LynsPardinus</string>

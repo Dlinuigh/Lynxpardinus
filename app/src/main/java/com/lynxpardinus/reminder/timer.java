@@ -35,7 +35,7 @@ public class timer extends BroadcastReceiver {
         notification.setContentTitle("学习时间小提示")
                 .setContentText("你已经学习5分钟啦！快玩半小时游戏休息一下吧！")
                 .setWhen(System.currentTimeMillis())
-                .setSmallIcon(R.drawable.ic_launcher_background)
+                .setSmallIcon(R.drawable.ic_baseline_alarm_24)
                 .setDefaults(Notification.DEFAULT_SOUND|Notification.DEFAULT_VIBRATE);
         notificationManager.createNotificationChannel(channel);
         notificationManager.notify(NOTIFYID,notification.build());//发送通知

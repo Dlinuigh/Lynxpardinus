@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">LynxPardinus</string>
+    <string name="app_name">Pardinus</string>
     <string name="about_title">彩蛋</string>
     <string name="about_mainpage">穷人的静态网页</string>
     <string name="copyright">软件部分内容为原创，保留权益</string>

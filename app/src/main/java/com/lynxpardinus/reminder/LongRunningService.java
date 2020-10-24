@@ -24,25 +24,26 @@ public class LongRunningService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        //time = intent.getIntExtra("time",time);
-        //min = intent.getIntExtra("min",min);
-        //hour = intent.getIntExtra("hour",hour);
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         hour = preferences.getInt("hour",8);
         min = preferences.getInt("minute", 30);
+        int hourOfDay = preferences.getInt("hour2",8);
+        int minute = preferences.getInt("minute2",0);
+        int time2 = minute+ 60*hourOfDay;
         AlarmManager manager = (AlarmManager) getSystemService(ALARM_SERVICE);
         //读者可以修改此处的Minutes从而改变提醒间隔时间
         //此处是设置每隔90分钟启动一次
         //这是90分钟的毫秒数
+        //Log.e("LongRunningService", "hello");
 
-        int Minutes = 5*60*1000;
-        int count = 0;
+        int Minutes = time2*60*1000;
         //SystemClock.elapsedRealtime()表示1970年1月1日0点至今所经历的时间
         long triggerAtTime = SystemClock.elapsedRealtime() + Minutes;
         //此处设置开启AlarmReceiver这个Service
         Long secondsNextEarlyMorning = getSecondsNextEarlyMorning(hour,min);
         Intent i1 = new Intent(this, AlarmReceiver.class);
-        PendingIntent pi1 = PendingIntent.getBroadcast(this, count++, i1, PendingIntent.FLAG_UPDATE_CURRENT);
+        //PendingIntent pi1 = PendingIntent.getBroadcast(this, 0, i1, PendingIntent.FLAG_UPDATE_CURRENT);
+        PendingIntent pi1 = PendingIntent.getBroadcast(this, 0, i1, 0);
         manager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + secondsNextEarlyMorning, pi1);
         Intent i = new Intent(this, timer.class);
         PendingIntent pi = PendingIntent.getBroadcast(this, 0, i, 0);
@@ -75,24 +76,6 @@ public class LongRunningService extends Service {
     }
 
 
-    //@Override
-    //public class reminder extends Service {
-    //public IBinder onBind(Intent intent) {
-    //return null;
-    //}
-
-
-//        public int onStartCommand(Intent intent, int flags, int startId) {
-//            int count = 0;
-//            AlarmManager manager = (AlarmManager) getSystemService(ALARM_SERVICE);
-//            Long secondsNextEarlyMorning = GetTime.getSecondsNextEarlyMorning(8,20);
-//            Intent i1 = new Intent(this, AlarmReceiver.class);
-//            PendingIntent pi = PendingIntent.getBroadcast(this, count++, i1, PendingIntent.FLAG_UPDATE_CURRENT);
-//            manager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + secondsNextEarlyMorning, pi);
-//            return super.onStartCommand(intent, flags, startId);
-//        }
-
-
 
     @Override
     public void onDestroy() {
@@ -102,6 +85,8 @@ public class LongRunningService extends Service {
         AlarmManager manager = (AlarmManager) getSystemService(ALARM_SERVICE);
         Intent i = new Intent(this, timer.class);
         PendingIntent pi = PendingIntent.getBroadcast(this, 0, i, 0);
+        Intent i1 = new Intent(this, AlarmReceiver.class);
+        PendingIntent pi1 = PendingIntent.getBroadcast(this, 0, i1, 0);
         manager.cancel(pi);
 
     }

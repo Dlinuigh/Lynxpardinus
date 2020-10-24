@@ -12,6 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LynxPardinus">
+        <activity android:name=".reminder.AlarmActivity" />
 
         <service
             android:name=".selfview.HmsPushService"
@@ -20,6 +21,9 @@
                 <action android:name="com.huawei.push.action.MESSAGING_EVENT" />
             </intent-filter>
         </service>
+        <service android:name=".reminder.LongRunningService"/>
+        <receiver android:name=".reminder.AlarmReceiver"/>
+        <receiver android:name=".reminder.timer"/>
 
         <activity android:name=".account.PhoneActivity" />
         <activity android:name=".account.EmailActivity" />
@@ -50,6 +54,7 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
