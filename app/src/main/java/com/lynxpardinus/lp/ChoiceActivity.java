@@ -11,7 +11,9 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.lynxpardinus.R;
 
@@ -25,6 +27,13 @@ public class ChoiceActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choice);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setHomeButtonEnabled(true);
+        }
         Bundle bundle = getIntent().getBundleExtra("bundle");
         Context context = this;
         if(bundle!=null){
@@ -40,14 +49,17 @@ public class ChoiceActivity extends AppCompatActivity {
             /*
             下面是一个动态添加选项的方法，在这里面设置选项的各个布局参数即可。
              */
+            int Defaultcolor = 0;
             assert choices != null;
             for(int i = 0; i<choices.size(); i++){
                 RadioButton tempButton = new RadioButton(this);
                 tempButton.setText(choices.get(i));
-                tempButton.setBackgroundColor(Color.WHITE);
+                //tempButton.setBackgroundColor(Color.WHITE);
+                 Defaultcolor= tempButton.getBackground().getAlpha();
                 radioGroup.addView(tempButton, LinearLayout.LayoutParams.MATCH_PARENT,LinearLayout.LayoutParams.WRAP_CONTENT);
             }
 
+            int finalDefaultcolor = Defaultcolor;
             radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(RadioGroup radioGroup, int checkedId) {
@@ -65,7 +77,8 @@ public class ChoiceActivity extends AppCompatActivity {
                             TimerTask task = new TimerTask() {
                                 @Override
                                 public void run() {
-                                    button.setBackgroundColor(Color.WHITE);
+                                    //button.setBackgroundColor(Color.WHITE);
+                                    button.setBackgroundColor(finalDefaultcolor);
                                 }
                             };
                             Timer timer=new Timer();

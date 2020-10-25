@@ -8,7 +8,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.huawei.hmf.tasks.Task;
 import com.huawei.hms.common.ApiException;
@@ -28,6 +30,14 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         context = this;
         setContentView(R.layout.activity_login);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setHomeButtonEnabled(true);
+        }
+
         MyEditView nickname = findViewById(R.id.nickName);
         nickname.setLeadText("昵称");
         findViewById(R.id.hwid_signin).setOnClickListener(v -> {
@@ -88,7 +98,7 @@ public class LoginActivity extends AppCompatActivity {
                 editor.putBoolean("accountStatus",false);
                 editor.apply();
                 Log.i(TAG, "makeup the account");
-                Toast.makeText(this, "退出发生变化",Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "登录失败，下次运行自动启动登录页面",Toast.LENGTH_LONG).show();
                 finish();
             }
         }

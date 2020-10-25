@@ -14,8 +14,9 @@
             layout="@layout/app_bar_main"
             android:layout_width="match_parent"
             android:id="@+id/mess"
+            app:layout_constraintTop_toTopOf="parent"
             android:layout_height="?attr/actionBarSize"/>
-        <TextView
+        <!--<TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/lprogressbar"
@@ -23,7 +24,6 @@
             android:textSize="16sp"
             android:id="@+id/ltitle"
             app:layout_constraintTop_toBottomOf="@+id/mess"/>
-
         <SeekBar
             android:id="@+id/progressBar1"
             android:layout_width="match_parent"
@@ -50,11 +50,11 @@
             android:layout_marginTop="10dp"
             app:layout_constraintTop_toBottomOf="@id/ptitle"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintEnd_toEndOf="parent"/>-->
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            app:layout_constraintTop_toBottomOf="@id/progressBar2"
+            app:layout_constraintTop_toBottomOf="@id/mess"
             app:layout_constraintBottom_toBottomOf="parent"
             android:id="@+id/achievement" />
     </androidx.constraintlayout.widget.ConstraintLayout>

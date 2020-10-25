@@ -25,36 +25,47 @@
         <receiver android:name=".reminder.AlarmReceiver"/>
         <receiver android:name=".reminder.timer"/>
 
-        <activity android:name=".account.PhoneActivity" />
-        <activity android:name=".account.EmailActivity" />
+        <activity android:name=".account.PhoneActivity"
+            android:parentActivityName=".account.LoginActivity"/>
+        <activity android:name=".account.EmailActivity"
+            android:parentActivityName=".account.LoginActivity"/>
         <activity
             android:name=".lp.ProgramActivity"
-            android:label="@string/program" />
+            android:label="@string/program"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".lp.ChoiceActivity"
-            android:label="@string/choice" />
+            android:label="@string/choice"
+            android:parentActivityName=".lp.LpActivity"/>
         <activity
             android:name=".lp.StatementActivity"
-            android:label="@string/statement" />
+            android:label="@string/statement"
+            android:parentActivityName=".lp.LpActivity"/>
         <activity
             android:name=".search.NewentryActivity"
-            android:label="@string/create_entry" />
+            android:label="@string/create_entry"
+            android:parentActivityName=".search.SearchActivity"/>
         <activity
             android:name=".search.SearchActivity"
-            android:label="@string/search" />
+            android:label="@string/search"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".about.AboutActivity"
-            android:label="@string/about" />
+            android:label="@string/about"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".settings.SettingsActivity"
-            android:label="@string/title_activity_settings" />
-        <activity android:name=".lp.LpActivity" />
-        <activity android:name=".account.LogoutActivity" />
-        <activity android:name=".account.LoginActivity" />
+            android:label="@string/title_activity_settings"
+            android:parentActivityName=".MainActivity"/>
+        <activity android:name=".lp.LpActivity"
+            android:parentActivityName=".MainActivity"/>
+        <activity android:name=".account.LogoutActivity"
+            android:parentActivityName=".MainActivity"/>
+        <activity android:name=".account.LoginActivity"
+            android:parentActivityName=".MainActivity"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

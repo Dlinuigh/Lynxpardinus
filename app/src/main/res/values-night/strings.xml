@@ -2,8 +2,8 @@
 <resources>
     <string name="app_name">Pardinus</string>
     <string name="about_title">彩蛋</string>
-    <string name="about_mainpage">穷人的静态网页</string>
-    <string name="copyright">软件部分内容为原创，保留权益</string>
+    <string name="about_mainpage">竹叶</string>
+    <string name="privacy">《隐私政策》</string>
     <string name="search">检索</string>
     <string name="learn">学习</string>
     <string name="statement">表述</string>

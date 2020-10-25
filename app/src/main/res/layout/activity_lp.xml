@@ -9,6 +9,7 @@
         layout="@layout/app_bar_main"
         android:id="@+id/mess"
         android:layout_width="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
         android:layout_height="?actionBarSize"/>
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"

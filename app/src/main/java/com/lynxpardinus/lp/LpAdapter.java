@@ -48,7 +48,6 @@ public class LpAdapter extends RecyclerView.Adapter<LpAdapter.ViewHolder> {
             int precent=preferences.getInt("r-value",50);
             float radius= (float) (precent*0.8);
             cardView.setRadius(radius);
-
             float fontSize=(float)(preferences.getInt("fontSize",12));
             textView.setTextSize(fontSize);
             textView.setSingleLine();

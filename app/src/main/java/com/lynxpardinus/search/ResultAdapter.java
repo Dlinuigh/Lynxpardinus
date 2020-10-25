@@ -45,6 +45,7 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.ViewHolder
             cardView.setRadius(radius);
             float fontSize=(float)(preferences.getInt("fontSize",12));
             textView.setTextSize(fontSize);
+            content.setTextSize(fontSize);
         }
     }
     @NonNull

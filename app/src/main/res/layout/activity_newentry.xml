@@ -58,7 +58,7 @@
         android:text="@string/create_entry"
         android:id="@+id/save_to_database"/>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
+    <!--<com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/upload"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -68,5 +68,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:contentDescription="upload"
-        android:focusable="true" />
+        android:focusable="true" />-->
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -81,7 +81,7 @@ public class AlarmActivity extends AppCompatActivity {
                         @Override
                         public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
 
-                            Toast.makeText(AlarmActivity.this,"tgvtyg",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(AlarmActivity.this,"设置了提醒",Toast.LENGTH_SHORT).show();
                             editor.putInt("hour",hourOfDay);
                             editor.putInt("minute",minute);
                             editor.apply();
@@ -105,7 +105,7 @@ public class AlarmActivity extends AppCompatActivity {
                         @Override
                         public void onTimeSet(TimePicker view, int hourOfDay1, int minute1) {
 
-                            Toast.makeText(AlarmActivity.this,"tgvtyg",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(AlarmActivity.this,"设置了提醒",Toast.LENGTH_SHORT).show();
                             editor.putInt("hour2", hourOfDay1);
                             editor.putInt("minute2", minute1);
                             editor.apply();

@@ -43,6 +43,7 @@ public class AchievementAdapter extends RecyclerView.Adapter<AchievementAdapter.
             float fontSize=(float)(preferences.getInt("fontSize",12));
             textView.setTextSize(fontSize);
             textView.setSingleLine();
+            describe.setTextSize(fontSize);
         }
     }
     @NonNull

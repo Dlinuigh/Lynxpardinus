@@ -10,7 +10,9 @@ import android.util.Log;
 import android.widget.SearchView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -45,6 +47,13 @@ public class SearchActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Context context =this;
         setContentView(R.layout.activity_search);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setHomeButtonEnabled(true);
+        }
         //MyDatabaseHelper helper = new MyDatabaseHelper(this,CREATE_ENTRY, "Entries.db",null, 1);
         //SQLiteDatabase db = helper.getWritableDatabase();
         SQLiteDatabase db = openDatabase(DB_PATH+DB_NAME,"Entries.db");
@@ -77,7 +86,7 @@ public class SearchActivity extends AppCompatActivity {
                 if(query.equals("*")){
                      cursor1= db.query("Entry", null,null, null, null,null,null);
                 }else{
-                    cursor1 = db.rawQuery("select * from Entry where name like '%"+query+"%'",null);
+                    cursor1 = db.rawQuery("select * from Entry where name like '%"+query+"%' or usage like '%"+query+"%' or describe like '%"+query+"%' or example like '%"+query+"%'",null);
                 }
                 if(cursor1.moveToFirst()) {
                     do {

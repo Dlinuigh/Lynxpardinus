@@ -4,7 +4,7 @@
     <string name="title_activity_settings">SettingsActivity</string>
     <string name="about_title">关于LynsPardinus</string>
     <string name="about_mainpage">我们的主页</string>
-    <string name="copyright">软件部分内容为原创，保留权益</string>
+    <string name="privacy">《隐私协议》</string>
     <string name="search">检索</string>
     <string name="learn">学习</string>
     <string name="practice">练习</string>

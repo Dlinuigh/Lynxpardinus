@@ -7,7 +7,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.lynxpardinus.R;
 
@@ -20,6 +22,13 @@ public class AboutActivity extends AppCompatActivity {
         Button button1 = findViewById(R.id.AboutMainpage);
         Button button2 = findViewById(R.id.AboutMarkandComment);
         Button button3 = findViewById(R.id.AboutMailus);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setHomeButtonEnabled(true);
+        }
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -29,7 +38,7 @@ public class AboutActivity extends AppCompatActivity {
                 Uri uri = Uri.parse("http://ding_ling_hui.gitee.io/lynx-pardinus-page");
                 intent.setData(uri);
                 //指定特定浏览器
-                intent.setClassName("com.android.browser", "com.android.browser.BrowserActivity");
+                //intent.setClassName("com.android.browser", "com.android.browser.BrowserActivity");
                 startActivity(intent);
             }
         });
@@ -58,6 +67,19 @@ public class AboutActivity extends AppCompatActivity {
                 data.putExtra(Intent.EXTRA_SUBJECT, "联系开发者");
                 //data.putExtra(Intent.EXTRA_TEXT, "这是内容");
                 startActivity(Intent.createChooser(data, "请选择邮件类应用"));
+            }
+        });
+        findViewById(R.id.privacy).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setAction("android.intent.action.VIEW");
+                //Uri uri = Uri.parse("https://www.wulihub.com.cn/go/WneYb4/index.html");
+                Uri uri = Uri.parse("http://ding_ling_hui.gitee.io/privacy");
+                intent.setData(uri);
+                //指定特定浏览器
+                //intent.setClassName("com.android.browser", "com.android.browser.BrowserActivity");
+                startActivity(intent);
             }
         });
     }

@@ -14,7 +14,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -97,13 +96,12 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false));
 
-        SeekBar lpro = findViewById(R.id.progressBar1);
+        /*SeekBar lpro = findViewById(R.id.progressBar1);
         SeekBar ppro = findViewById(R.id.progressBar2);
         lpro.setProgress(learn_progress);
         lpro.setMax(100);
         ppro.setProgress(practice_progress);
         ppro.setMax(100);
-        /*
         lpro.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -137,12 +135,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 */
+
         ImageButton login = findViewById(R.id.login);
         ImageButton logout = findViewById(R.id.logout);
         SharedPreferences sharedPreferences = getSharedPreferences("userInfo",MODE_PRIVATE);
         if(!sharedPreferences.getBoolean("accountStatus", false)){
             startActivity(new Intent(context, LoginActivity.class));
         }
+
         login.setOnClickListener(v -> {
             if(!sharedPreferences.getBoolean("accountStatus",false)){
                 startActivity(new Intent(context, LoginActivity.class));
